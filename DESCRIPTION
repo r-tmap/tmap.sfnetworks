@@ -1,0 +1,29 @@
+Package: tmap.sfnetworks
+License: GPL-3
+Title: Visualization of networks from 'sfnetworks' using 'tmap'
+Type: Package
+LazyData: true
+Authors@R: c(
+	person("Martijn", "Tennekes", email = "mtennekes@gmail.com", role = c("aut", "cre")),
+	person(given = "Andrea",
+             family = "Gilardi",
+             role = "aut",
+             email = "andrea.gilardi@unimib.it",
+             comment = c(ORCID = "0000-0002-9424-7439")),
+	person("Robin", "Lovelace", email = "rob00x@gmail.com", role = "ctb")
+	)
+Description: Thematic maps are geographical maps in which spatial data distributions are visualized. This package offers a flexible, layer-based, and easy to use approach to create thematic maps, such as choropleths and bubble maps.
+Version: 0.1
+Date: 2023-08-13
+Encoding: UTF-8
+Depends:
+    R (>= 3.5.0),
+Imports:
+    tmap (>= 4.0),
+    sfnetworks,
+    igraph,
+    tidygraph
+URL: https://github.com/r-tmap/tmap.sfnetworks
+BugReports: https://github.com/r-tmap/tmap.sfnetworks/issues
+VignetteBuilder: knitr
+RoxygenNote: 7.2.3
