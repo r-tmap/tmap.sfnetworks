@@ -2,11 +2,11 @@
 % Please edit documentation in R/tmapShape_sfnetworks.R
 \name{tmapSubsetShp.sfnetwork}
 \alias{tmapSubsetShp.sfnetwork}
-\title{Implementation of tmap::tmapSubsetShp for sfnetwork}
+\title{Implementation of tmapSubsetShp for sfnetwork}
 \usage{
 \method{tmapSubsetShp}{sfnetwork}(shp, vars)
 }
 \description{
-Implementation of tmap::tmapSubsetShp for sfnetwork
+Implementation of tmapSubsetShp for sfnetwork
 }
 \keyword{internal}

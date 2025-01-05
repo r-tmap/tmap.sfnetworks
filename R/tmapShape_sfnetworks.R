@@ -1,6 +1,6 @@
-#' Implementation of tmap::tmapGetShapeMeta1 for sfnetwork
+#' Implementation of tmapGetShapeMeta1 for sfnetwork
 #' 
-#' Implementation of tmap::tmapGetShapeMeta1 for sfnetwork
+#' Implementation of tmapGetShapeMeta1 for sfnetwork
 #' 
 #' @method tmapGetShapeMeta1 sfnetwork
 #' @import tmap
@@ -35,9 +35,9 @@ tmapGetShapeMeta1.sfnetwork = function(shp, o) {
 }
 
 
-#' Implementation of tmap::tmapSubsetShp for sfnetwork
+#' Implementation of tmapSubsetShp for sfnetwork
 #' 
-#' Implementation of tmap::tmapSubsetShp for sfnetwork
+#' Implementation of tmapSubsetShp for sfnetwork
 #' 
 #' @method tmapSubsetShp sfnetwork
 #' @import tmap
@@ -50,9 +50,9 @@ tmapSubsetShp.sfnetwork = function(shp, vars) {
 	shp
 }
 
-#' Implementation of tmap::tmapGetShapeMeta2 for sfnetwork
+#' Implementation of tmapGetShapeMeta2 for sfnetwork
 #' 
-#' Implementation of tmap::tmapGetShapeMeta2 for sfnetwork
+#' Implementation of tmapGetShapeMeta2 for sfnetwork
 #' 
 #' @method tmapGetShapeMeta2 sfnetwork
 #' @import tmap
@@ -85,9 +85,9 @@ tmapGetShapeMeta2.sfnetwork = function(shp, smeta, o) {
 
 
 
-#' Implementation of tmap::tmapShape for sfnetwork
+#' Implementation of tmapShape for sfnetwork
 #' 
-#' Implementation of tmap::tmapShape for sfnetwork
+#' Implementation of tmapShape for sfnetwork
 #' 
 #' @method tmapShape sfnetwork
 #' @import tmap
@@ -95,7 +95,7 @@ tmapGetShapeMeta2.sfnetwork = function(shp, smeta, o) {
 #' @keywords internal
 #' @export
 tmapShape.sfnetwork = function(shp, is.main, crs, bbox, unit, filter, shp_name, smeta, o, tmf) {
-	
+	tmapID__ = NULL
 
 	# the main method to process spatial objects
 	# in tmap, the geometry is separated from the data

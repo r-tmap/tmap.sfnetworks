@@ -2,11 +2,11 @@
 % Please edit documentation in R/tmapShape_sfnetworks.R
 \name{tmapGetShapeMeta1.sfnetwork}
 \alias{tmapGetShapeMeta1.sfnetwork}
-\title{Implementation of tmap::tmapGetShapeMeta1 for sfnetwork}
+\title{Implementation of tmapGetShapeMeta1 for sfnetwork}
 \usage{
 \method{tmapGetShapeMeta1}{sfnetwork}(shp, o)
 }
 \description{
-Implementation of tmap::tmapGetShapeMeta1 for sfnetwork
+Implementation of tmapGetShapeMeta1 for sfnetwork
 }
 \keyword{internal}

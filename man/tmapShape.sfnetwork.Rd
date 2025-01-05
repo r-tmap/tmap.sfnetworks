@@ -2,11 +2,11 @@
 % Please edit documentation in R/tmapShape_sfnetworks.R
 \name{tmapShape.sfnetwork}
 \alias{tmapShape.sfnetwork}
-\title{Implementation of tmap::tmapShape for sfnetwork}
+\title{Implementation of tmapShape for sfnetwork}
 \usage{
 \method{tmapShape}{sfnetwork}(shp, is.main, crs, bbox, unit, filter, shp_name, smeta, o, tmf)
 }
 \description{
-Implementation of tmap::tmapShape for sfnetwork
+Implementation of tmapShape for sfnetwork
 }
 \keyword{internal}

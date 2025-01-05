@@ -2,6 +2,7 @@
 % Please edit documentation in R/tm_layers_nodes.R
 \name{tm_nodes}
 \alias{tm_nodes}
+\alias{opt_tm_nodes}
 \title{Map layer: nodes of a (sf)network}
 \usage{
 tm_nodes(
@@ -38,12 +39,23 @@ tm_nodes(
   col_alpha.legend = tm_legend(),
   col_alpha.free = NA,
   plot.order = tm_plot_order("size"),
-  trans.args = list(),
-  mapping.args = list(icon.scale = 3, just = NA, grob.dim = c(width = 48, height = 48,
-    render.width = 256, render.height = 256)),
   zindex = NA,
   group = NA,
-  group.control = "check"
+  group.control = "check",
+  popup.vars = NA,
+  popup.format = list(),
+  hover = NA,
+  id = "",
+  options = opt_tm_nodes()
+)
+
+opt_tm_nodes(
+  points_only = "ifany",
+  point_per = "feature",
+  on_surface = FALSE,
+  icon.scale = 3,
+  just = NA,
+  grob.dim = c(width = 48, height = 48, render.width = 256, render.height = 256)
 )
 }
 \arguments{
@@ -63,15 +75,46 @@ tm_nodes(
 
 \item{col_alpha, col_alpha.scale, col_alpha.legend, col_alpha.free}{Visual variable that determines the border color alpha transparency. See details.}
 
-\item{plot.order}{Specification in which order the spatial features are drawn. See \code{\link[tmap:tm_plot_order]{tm_plot_order}} for details.}
-
-\item{trans.args, mapping.args}{lists that are passed on to internal transformation and mapping functions respectively}
+\item{plot.order}{Specification in which order the spatial features are drawn. See `tmap::tm_plot_order` for details.}
 
 \item{zindex}{Map layers are drawn on top of each other. The \code{zindex} numbers (one for each map layer) determines the stacking order. By default the map layers are drawn in the order they are called.}
 
 \item{group}{Name of the group to which this layer belongs. This is only relevant in view mode, where layer groups can be switched (see `group.control`)}
 
 \item{group.control}{In view mode, the group control determines how layer groups can be switched on and off. Options: `"radio"` for radio buttons (meaning only one group can be shown), `"check"` for check boxes (so multiple groups can be shown), and `"none"` for no control (the group cannot be (de)selected).}
+
+\item{popup.vars}{names of data variables that are shown in the popups
+in `"view"` mode. Set popup.vars to `TRUE` to show all variables in the
+shape object. Set popup.vars to `FALSE` to disable popups. Set `popup.vars`
+to a character vector of variable names to those those variables in the popups.
+The default (`NA`) depends on whether visual variables (e.g.`fill`) are used.
+If so, only those are shown. If not all variables in the shape object are shown.}
+
+\item{popup.format}{list of formatting options for the popup values.
+See the argument `legend.format` for options. Only applicable for
+numeric data variables. If one list of formatting options is provided,
+it is applied to all numeric variables of `popup.vars`. Also, a (named)
+list of lists can be provided. In that case, each list of formatting options
+is applied to the named variable.}
+
+\item{hover}{name of the data variable that specifies the hover labels (view mode only). Set to `FALSE` to disable hover labels. By default `FALSE`, unless `id` is specified. In that case, it is set to `id`,}
+
+\item{id}{name of the data variable that specifies the indices of the spatial
+features. Only used for `"view"` mode.}
+
+\item{options}{options passed on to the corresponding `opt_<layer_function>` function}
+
+\item{points_only}{should only point geometries of the shape object (defined in [tmap::tm_shape()]) be plotted? By default `"ifany"`, which means `TRUE` in case a geometry collection is specified.}
+
+\item{point_per}{specification of how spatial points are mapped when the geometry is a multi line or a multi polygon. One of \code{"feature"}, \code{"segment"} or \code{"largest"}. The first generates a spatial point for every feature, the second for every segment (i.e. subfeature), the third only for the largest segment (subfeature). Note that the last two options can be significant slower.}
+
+\item{on_surface}{In case of polygons, centroids are computed. Should the points be on the surface? If `TRUE`, which is slower than the default `FALSE`, centroids outside the surface are replaced with points computed with [sf::st_point_on_surface()].}
+
+\item{icon.scale}{scaling number that determines how large the icons (or grobs) are in plot mode in comparison to proportional symbols (such as bubbles). For view mode, use the argument `grob.dim`}
+
+\item{just}{not used (yet)}
+
+\item{grob.dim}{vector of four values that determine how grob objects (see details) are shown in view mode. The first and second value are the width and height of the displayed icon. The third and fourth value are the width and height of the rendered png image that is used for the icon. Generally, the third and fourth value should be large enough to render a ggplot2 graphic successfully. Only needed for the view mode.}
 }
 \description{
 Map layer that draws the nodes of a (sf)network.
@@ -86,7 +129,6 @@ tm_shape(sfn) +
 	tm_network()
 	
 tm_shape(sfn) +
-	tm_edges(col = "type") +
+	tm_edges(col = "type", lwd = 4) +
 	tm_nodes()
-	
 }

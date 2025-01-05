@@ -19,7 +19,6 @@ tm_shape(sfn) +
 	tm_network()
 	
 tm_shape(sfn) +
-	tm_edges(col = "type") +
+	tm_edges(col = "type", lwd = 4) +
 	tm_nodes()
-	
 }

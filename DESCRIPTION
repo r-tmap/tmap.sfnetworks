@@ -19,11 +19,11 @@ Encoding: UTF-8
 Depends:
     R (>= 3.5.0),
 Imports:
-    tmap (>= 4.0),
+    tmap (>= 3.99),
     sfnetworks,
+    data.table,
     igraph,
     tidygraph
 URL: https://github.com/r-tmap/tmap.sfnetworks
 BugReports: https://github.com/r-tmap/tmap.sfnetworks/issues
-VignetteBuilder: knitr
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
