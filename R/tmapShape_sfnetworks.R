@@ -13,8 +13,8 @@ tmapGetShapeMeta1.sfnetwork = function(shp, o) {
 	# for sfnetwork: working, but with (unnesseary?) processing 
 	# are there direct methods to retrieve node and edge variable names?
 	
-	# nodes = sf::st_as_sf(shp, "nodes")
-	# edges = sf::st_as_sf(sfnetworks:::explicitize_edges(shp), "edges")	
+	nodes = sf::st_as_sf(shp, "nodes")
+	edges = sf::st_as_sf(shp, "edges")	
 	# 
 	# vars_nodes = setdiff(names(nodes), attr(nodes, "sf_column"))
 	# vars_edges = setdiff(names(edges), attr(edges, "sf_column"))
@@ -66,7 +66,7 @@ tmapGetShapeMeta2.sfnetwork = function(shp, smeta, o) {
 	
 	
 	nodes = sf::st_as_sf(shp, "nodes")
-	edges = sf::st_as_sf(sfnetworks:::explicitize_edges(shp), "edges")	
+	edges = sf::st_as_sf(shp, "edges")	
 	
 	vars_nodes = setdiff(names(nodes), attr(nodes, "sf_column"))
 	vars_edges = setdiff(names(edges), attr(edges, "sf_column"))
@@ -118,7 +118,7 @@ tmapShape.sfnetwork = function(shp, is.main, crs, bbox, unit, filter, shp_name, 
 	}
 	
 	nodes = sf::st_as_sf(shp, "nodes")
-	edges = sf::st_as_sf(sfnetworks:::explicitize_edges(shp), "edges")	
+	edges = sf::st_as_sf(shp, "edges")
 	
 	geom_nodes = sf::st_geometry(nodes)
 	geom_edges = sf::st_geometry(edges)
