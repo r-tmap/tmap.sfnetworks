@@ -1,4 +1,4 @@
-Package: tmap.sfnetworks
+Package: tmap.networks
 License: GPL-3
 Title: Visualization of networks from 'sfnetworks' using 'tmap'
 Type: Package
