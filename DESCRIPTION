@@ -24,6 +24,6 @@ Imports:
     data.table,
     igraph,
     tidygraph
-URL: https://github.com/r-tmap/tmap.sfnetworks
-BugReports: https://github.com/r-tmap/tmap.sfnetworks/issues
+URL: https://github.com/r-tmap/tmap.networks
+BugReports: https://github.com/r-tmap/tmap.networks/issues
 RoxygenNote: 7.3.2
